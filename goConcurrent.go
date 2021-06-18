@@ -26,7 +26,7 @@ func Or(channels ...<-chan interface{}) <-chan interface{} {
 			case <-channels[0]:
 			case <-channels[1]:
 			case <-channels[2]:
-			case <-or(append(channels[3:], orDone)...):
+			case <-Or(append(channels[3:], orDone)...):
 			}
 		}
 	}()
